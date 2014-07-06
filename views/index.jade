@@ -1,0 +1,16 @@
+extends layout
+
+block content
+	script(type='text/javascript').
+		// HAS TO BE NAMED "RecaptchaOptions"
+		var RecaptchaOptions = {
+			theme : 'blackglass',
+			lang  : 'en'
+		};
+
+	h1 El. Psy. Congroo.
+	p Welcome to the D-mail.
+	form(method="POST" action="/")
+		!= reCaptcha_form
+		// Don't actually need the value attribute I think
+		input(type="submit", value='Check Recaptcha')
